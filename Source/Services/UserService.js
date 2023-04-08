@@ -2,19 +2,12 @@ const validators=require("../Utilities/Validator")
 const userModel=require("../Models/Schema/UserSchema")
 var generateUniqueId = require("generate-unique-id")
 
-function generateId(){
-    const id = generateUniqueId({
-        length: 3,
-        useLetters: false
-    });
-    return id;
-}
 exports.UserRegisterService=async (req,res)=>{
     try {
         const message=validators.validations(req);
         if(message.length==0)
         {
-            const userId= generateId()
+            const userId= generateUniqueId({length: 3,useLetters: false});
             const newRequest={userId,...req};
     
             await userModel.create(newRequest);

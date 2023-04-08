@@ -7,7 +7,7 @@ exports.RegisterUser=async(req,res)=>{
         data:response.data
     })
 }
-exports.GetUser=async (req,res)=>{
+exports.GetUser=async(req,res)=>{
     const response= await service.GetUserService(req.params);
     res.status(response.statusCode).json({
         status:response.status,
