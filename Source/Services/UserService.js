@@ -4,13 +4,13 @@ var generateUniqueId = require("generate-unique-id")
 
 exports.UserRegisterService=async (req,res)=>{
     try {
-        const message=validators.validations(req);
-        if(message.length==0)
+        const errorMessage=validators.validations(req);
+        if(errorMessage.length==0)
         {
             const userId= generateUniqueId({length: 3,useLetters: false});
             const newRequest={userId,...req};
     
-            await userModel.create(newRequest);
+            await userModel.create(newRequest);//create data in db
             return {statusCode:200,status: "Success",data: "Data Registered Successfully",};
         }
         else
@@ -22,10 +22,10 @@ exports.UserRegisterService=async (req,res)=>{
     }
 }
 exports.GetUserService=async(req,res)=>{
-    const message=validators.UserIdValidation(req.userId);
-    if(message.length==0)
+    const errorMessage=validators.UserIdValidation(req.userId);
+    if(errorMessage.length==0)
     {
-        const user= await userModel.find({userId:req.userId},{_id:0,__v:0});
+        const user= await userModel.find({userId:req.userId},{_id:0,__v:0});//get data from db
         if(user.length>0)
         {
             return {statusCode:200,status: 'Success',data: {user}};
