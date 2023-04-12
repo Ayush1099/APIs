@@ -23,6 +23,7 @@
     "express-validator": "^6.15.0",
     "generate-unique-id": "^2.0.1",
     "jsonwebtoken": "^9.0.0",
+    "mongo-sanitize": "^1.1.0",
     "mongoose": "^7.0.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-node": "^0.8.4",

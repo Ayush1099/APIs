@@ -7,7 +7,6 @@ const token = require("./Source/Middleware/Token");
 const app=express();
 
 app.use(bodyParser.json());
-
 app.post('/getToken',token.TokenGenerator);
 app.use('/',auth,router);
 

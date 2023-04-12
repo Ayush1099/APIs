@@ -25,6 +25,6 @@ exports.GetUserService=async(req)=>{
     }
     else
     {
-        return {statusCode:400,status: "Fail",data: errorMessage,};
+        return {statusCode:400,status: "Fail",data: errorMessage};
     }
 }
