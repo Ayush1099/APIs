@@ -4,7 +4,7 @@
   "description": "this is a poc",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,17 @@
     "jsonwebtoken": "^9.0.0",
     "mongo-sanitize": "^1.1.0",
     "mongoose": "^7.0.3",
+    "sinon": "^15.0.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-node": "^0.8.4",
-    "swagger-ui-express": "^4.6.2"
+    "swagger-ui-express": "^4.6.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "node-env-run": "^4.0.2"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nock": "^13.3.0",
+    "node-env-run": "^4.0.2",
+    "supertest": "^6.3.3"
   }
 }
