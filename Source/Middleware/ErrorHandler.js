@@ -1,6 +1,6 @@
-const Message=require("../Middleware/ErrorMessages")
+const Message=require("./ErrorMessages")
 
-function ErrorHandler(Error,res){
+function ErrorHandler(Error,req,res,next){
     res.status(Message[Error.message].status).json({
         message:Message[Error.message].errorMessage
     })
