@@ -13,7 +13,7 @@ exports.UserRegisterService=async (req)=>{
     }
     else
     {
-        return {statusCode:400,status: "Fail",data: errorMessage};
+        throw new Error("ValidationError")
     }
 }
 exports.GetUserService=async(req)=>{
@@ -25,6 +25,6 @@ exports.GetUserService=async(req)=>{
     }
     else
     {
-        return {statusCode:400,status: "Fail",data: errorMessage};
+        throw new Error("ValidationError")
     }
 }

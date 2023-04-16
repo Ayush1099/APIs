@@ -6,6 +6,7 @@ const auth = require("./Source/Middleware/Auth");
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 const token = require("./Source/Middleware/Token");
+const ErrorHandler=require("./Source/Middleware/ErrorHandler");
 const app=express();
 
 app.use(bodyParser.json());
@@ -44,6 +45,6 @@ const swaggerOptions = {
 
 app.post('/getToken',token.TokenGenerator);
 app.use('/',auth,router);
-
+app.use(ErrorHandler);
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{console.log(`App running on port ${port}`);})

@@ -1,27 +1,28 @@
 var emailValidator = require('email-validator');
+const validatorMessage=require("../Middleware/ErrorMessages")
 
 exports.validations=function(req){
-    let error=[];
+    validatorMessage.ValidationError.errorMessage=[];
     if(req.name.trim().length<3)
     {
-        error.push({"Name":"Length of Name should be greater then or equal to 3"});
+        validatorMessage.ValidationError.errorMessage.push({"Name":"Length of Name should be greater then or equal to 3"});
     }
     if(req.phoneNo.toString().length!=10)
     {
-        error.push({"Phone Number":"Length of phone number should be equal to 10"});
+        validatorMessage.ValidationError.errorMessage.push({"Phone Number":"Length of phone number should be equal to 10"});
     }
     if(!emailValidator.validate(req.emailId))
     {
-        error.push({"Email ID":"Incorrect Email ID"});
+        validatorMessage.ValidationError.errorMessage.push({"Email ID":"Incorrect Email ID"});
     }
-    return error;
+    return validatorMessage.ValidationError.errorMessage;
 }
 exports.UserIdValidation=function(userId){
-    let error=[];
+    validatorMessage.ValidationError.errorMessage=[];
 
     if(userId.length!=3)
     {
-        error.push({"UserId":"Length of UserId should be equal to 3"});
+        validatorMessage.ValidationError.errorMessage.push({"UserId":"Length of UserId should be equal to 3"});
     }
-    return error;
+    return validatorMessage.ValidationError.errorMessage;
 }

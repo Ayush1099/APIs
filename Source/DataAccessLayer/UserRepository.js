@@ -3,9 +3,9 @@ const userModel=require("../Models/Schema/UserSchema")
 exports.UserRegisterRepository=async(req)=>{
     try {
         await userModel.create(req);//create data in db
-        return {statusCode:200,status: "Success",data: "Data Registered Successfully",};
+        return {statusCode:200,status: "Success",data: "Data Registered Successfully"};
     } catch (error) {
-        return {statusCode:400,status: "Fail",data: `User Already Registered with Email ID = ${req.emailId}`,};
+        throw new Error("AlreadyExists")
     }
 }
 exports.GetUserRespository=async(req)=>{
@@ -16,6 +16,6 @@ exports.GetUserRespository=async(req)=>{
     }
     else
     {
-        return {statusCode:404,status: "Fail",data: 'User does not exists',};
+        throw new Error("NotFound")
     }
 }
