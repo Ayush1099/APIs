@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "bde43400-18be-4ee8-abc9-4a6b8f96a2a3",
+		"name": "Token Generate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23632795"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/getToken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user123",
+						"type": "default"
+					},
+					{
+						"key": "password",
+						"value": "password@123",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

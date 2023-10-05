@@ -9,14 +9,14 @@
   },
     "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ayush1099/Microservices.git"
+    "url": "git+https://github.com/Ayush1099/APIs.git"
   },
   "author": "Ayush Verma",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ayush1099/Microservices/issues"
+    "url": "https://github.com/Ayush1099/APIs/issues"
   },
-  "homepage": "https://github.com/Ayush1099/Microservices#readme",
+  "homepage": "https://github.com/Ayush1099/APIs#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "email-validator": "^2.0.4",
