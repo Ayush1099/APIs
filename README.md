@@ -2,11 +2,12 @@
 This is a Backend Application consisting of 2 APIs of type GET and POST method.
 
 ## Features
-- The POST method is used to create new data and 
+- POST method is used to create new data.
 - GET method is used to fetch Data.
-- Implemented JWT mechanism for Authentication and Authorization and 
-- Error Handling Middlware.
+- Implemented JWT mechanism for Authentication and Authorization.
+- Implemented Error Handling Middleware.
 - Integrated Swagger for API Documentation and Testing.
+- Implemented validations for Request parameters.
 
 ## Technologies Used
 - Framework: Express JS
@@ -35,3 +36,5 @@ To run this applcation locally, follow these steps:
 ## Setup Postmon to generate Token
 1. Collection to generate token is provided in the Token Collection folder which then needs to be imported in the Postman
 2. Token will get generated only when this Express JS application is running as the code to generate the token is present in this application
+3. The token needs to be inserted here for the APIs to execute successfully
+![Alt text](image.png)
