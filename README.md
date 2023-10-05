@@ -2,15 +2,15 @@
 This is a Backend Application consisting of 2 APIs of type GET and POST method.
 
 ## Features
--- The POST method is used to create new data and 
--- GET method is used to fetch Data.
--- Implemented JWT mechanism for Authentication and Authorization and 
--- Error Handling Middlware.
--- Integrated Swagger for API Documentation and Testing.
+- The POST method is used to create new data and 
+- GET method is used to fetch Data.
+- Implemented JWT mechanism for Authentication and Authorization and 
+- Error Handling Middlware.
+- Integrated Swagger for API Documentation and Testing.
 
 ## Technologies Used
--- Framework: Express JS
--- Database: MongoDB
+- Framework: Express JS
+- Database: MongoDB
 
 ## Installation
 To run this applcation locally, follow these steps:
