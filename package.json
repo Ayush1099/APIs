@@ -4,9 +4,10 @@
   "description": "this is a poc",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "start": "npm run open-swagger && nodemon app.js",
+    "open-swagger": "start http://localhost:3000/api-docs"
   },
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/Ayush1099/Microservices.git"
   },
@@ -28,7 +29,7 @@
     "sinon": "^15.0.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-node": "^0.8.4",
-    "swagger-ui-express": "^4.6.2",
+    "swagger-ui-express": "^4.6.3",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ const controller=require('../Controller/UserController');
  * /registerUser: 
  *   post: 
  *     summary: API to add new notes.
- *     description: Creates a new notes by inserting new notes data to the database. 
+ *     description: Creates new data by inserting request data in the MongoDB.
  *     requestBody:
  *       required: true
  *       content:
@@ -38,24 +38,38 @@ routing.post('/registerUser',controller.RegisterUser)
  * /getUser/{userId}: 
  *   get: 
  *     summary: API to update existing notes..
- *     description: Updates notes data to the database. 
+ *     description: Fetches Data from MongoDB as per userId provided. 
  *     parameters: 
- *     - in: path
- *       name: userId 
+ *     - name: userId 
+ *       in: path
  *       description: UserId to retrieve the user
  *       required: true 
- *       type: Number 
- *       example: 578
+ *       schema:
+ *          type: integer 
+ *          example: 578
  *     responses:  
  *       200: 
  *         description: Success  
- *         schema:
- *              type: object
- *              example:
- *                  userId:578
- *                  name:ggg
- *                  emailId:ggg@gmail.com
- *                  phoneNo:9822386530
+ *         content:
+ *              application/json:
+ *                  schema:
+ *                     type: object
+ *                     properties:
+ *                         status:
+ *                           type: string
+ *                         data:
+ *                           type: array
+ *                           items:
+ *                             type: object
+ *                             properties:       
+ *                                userId:
+ *                                   type: string
+ *                                name:
+ *                                   type: string
+ *                                emailId:
+ *                                   type: string
+ *                                phoneNo:
+ *                                   type: number
  */
 routing.get('/getUser/:userId',controller.GetUser)
 
