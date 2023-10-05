@@ -1,6 +1,6 @@
 module.exports={
     NotFound:{
-        status:204,
+        status:404,
         errorMessage:"User Not Found"
     },
     ValidationError:{

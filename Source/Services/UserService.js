@@ -11,10 +11,7 @@ exports.UserRegisterService=async (req)=>{
         const response=await repository.UserRegisterRepository(newRequest);
         return response;
     }
-    else
-    {
-        throw new Error("ValidationError")
-    }
+    throw new Error("ValidationError")
 }
 exports.GetUserService=async(req)=>{
     const errorMessage=validators.UserIdValidation(req.userId);
@@ -23,8 +20,5 @@ exports.GetUserService=async(req)=>{
         const response=await repository.GetUserRespository(req)
         return response;
     }
-    else
-    {
-        throw new Error("ValidationError")
-    }
+    throw new Error("ValidationError")
 }

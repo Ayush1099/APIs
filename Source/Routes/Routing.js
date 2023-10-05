@@ -6,8 +6,7 @@ const controller=require('../Controller/UserController');
  * @swagger 
  * /registerUser: 
  *   post: 
- *     summary: API to add new notes.
- *     description: Creates new data by inserting request data in the MongoDB.
+ *     summary: Registers new User by inserting request data in MongoDB.
  *     requestBody:
  *       required: true
  *       content:
@@ -17,19 +16,58 @@ const controller=require('../Controller/UserController');
  *             properties:
  *               name:
  *                 description: Name of the person
- *                 type: String  
- *                 example: Ayush
+ *                 type: string  
+ *                 example: ddd
  *               emailId:
  *                 description: Email Id of the person
- *                 type: String
- *                 example: aaa@gmail.com
+ *                 type: string
+ *                 example: ddd@gmail.com
  *               phoneNo:
  *                 description: Phone Number of the person
- *                 type: Integer
+ *                 type: string
+ *                 format: phone
  *                 example: 9822386530
  *     responses:  
- *       200: 
- *         description: Date Registered Successfully  
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                 data:
+ *                   type: string
+ *                 userId:
+ *                   type: string
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       Name:
+ *                         type: string
+ *                       Phone Number:
+ *                         type: string
+ *                       Email ID:
+ *                         type: string
+ *       401:
+ *         description: Unauthorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */ 
 routing.post('/registerUser',controller.RegisterUser)
 
@@ -37,8 +75,7 @@ routing.post('/registerUser',controller.RegisterUser)
  * @swagger 
  * /getUser/{userId}: 
  *   get: 
- *     summary: API to update existing notes..
- *     description: Fetches Data from MongoDB as per userId provided. 
+ *     summary: Fetches User Details from MongoDB as per userId provided. 
  *     parameters: 
  *     - name: userId 
  *       in: path
@@ -69,7 +106,39 @@ routing.post('/registerUser',controller.RegisterUser)
  *                                emailId:
  *                                   type: string
  *                                phoneNo:
- *                                   type: number
+ *                                   type: string
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       User ID:
+ *                         type: string
+ *       401:
+ *         description: Unauthorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 routing.get('/getUser/:userId',controller.GetUser)
 

@@ -7,7 +7,8 @@ exports.RegisterUser=async(req,res,next)=>{
         const response=await service.UserRegisterService(request);
         res.status(response.statusCode).json({
             status:response.status,
-            data:response.data
+            data:response.data,
+            userId: response.UserId
         })
     } catch (error) {
         next(error)

@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "64313a4919145f9a184e71e2"
+  },
+  "userId": "578",
+  "name": "ccc",
+  "emailId": "ccc@gmail.com",
+  "phoneNo": {
+    "$numberLong": "9517534682"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6447f2d26055138e2d9846d6"
+  },
+  "userId": "640",
+  "name": "www",
+  "emailId": "www@gmail.com",
+  "phoneNo": {
+    "$numberLong": "7972352688"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6447f2ee6055138e2d9846da"
+  },
+  "userId": "245",
+  "name": "xxx",
+  "emailId": "xxx@gmail.com",
+  "phoneNo": {
+    "$numberLong": "9517534682"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "644a71033ef724e1b462a5e7"
+  },
+  "userId": "438",
+  "name": "ddd",
+  "emailId": "ddd@gmail.com",
+  "phoneNo": {
+    "$numberLong": "9874563210"
+  },
+  "__v": 0
+}]

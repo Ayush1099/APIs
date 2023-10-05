@@ -3,15 +3,27 @@ const validatorMessage=require("../Middleware/ErrorMessages")
 
 exports.validations=function(req){
     validatorMessage.ValidationError.errorMessage=[];
-    if(req.name.trim().length<3)
+    if(req.name == "")
+    {
+        validatorMessage.ValidationError.errorMessage.push({"Name":"Name is required"});
+    }
+    else if(req.name.trim().length<3)
     {
         validatorMessage.ValidationError.errorMessage.push({"Name":"Length of Name should be greater then or equal to 3"});
     }
-    if(req.phoneNo.toString().length!=10)
+    if(req.phoneNo.toString().length == 0)
+    {
+        validatorMessage.ValidationError.errorMessage.push({"Phone Number":"Phone Number is required"});
+    }
+    else if(req.phoneNo.toString().length!=10)
     {
         validatorMessage.ValidationError.errorMessage.push({"Phone Number":"Length of phone number should be equal to 10"});
     }
-    if(!emailValidator.validate(req.emailId))
+    if(req.emailId == "")
+    {
+        validatorMessage.ValidationError.errorMessage.push({"Email ID":"Email ID is mandatory"});
+    }
+    else if(!emailValidator.validate(req.emailId))
     {
         validatorMessage.ValidationError.errorMessage.push({"Email ID":"Incorrect Email ID"});
     }
