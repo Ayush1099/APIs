@@ -37,4 +37,4 @@ To run this applcation locally, follow these steps:
 1. Collection to generate token is provided in the Token Collection folder which then needs to be imported in the Postman
 2. Token will get generated only when this Express JS application is running as the code to generate the token is present in this application
 3. The token needs to be inserted here for the APIs to execute successfully
-![Alt text](image.png)
+  ![Alt text](Images/swagger.png)
